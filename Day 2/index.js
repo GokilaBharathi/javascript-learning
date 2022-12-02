@@ -24,12 +24,38 @@ const student = {
   name: "Revi",
   class: "10",
   section: "A",
-  mark: { tamil: 50, english: 80, science: 90, social: 68, maths: 99 },
+  mark: { tamil: 70, english: 90, science: 90, social: 68, maths: 99 },
+  description: function () {
+    const sum =
+      this.mark.tamil +
+      this.mark.english +
+      this.mark.science +
+      this.mark.social +
+      this.mark.maths;
+    return this.name + " scored " + sum + "/500";
+  },
 };
 
 function printStudent(st) {
-    const mark = st.mark.tamil + st.mark.english + st.mark.science + st.mark.social + st.mark.maths;
-  console.log(st.name + " scored 200/500");
+  const sum =
+    st.mark.tamil +
+    st.mark.english +
+    st.mark.science +
+    st.mark.social +
+    st.mark.maths;
+  console.log(st.name + " scored " + sum + "/500");
 }
 
 printStudent(student);
+console.log(student.description());
+
+// table starts
+for (let table = 1; table <= 4; table++) {
+  if (table % 2 == 0) {
+    for (let i = 1; i <= 5; i++) {
+      console.log(table + " + " + i + " = " + (table + i));
+    }
+    console.log("-------------------------------------------");
+  }
+}
+// table ends
